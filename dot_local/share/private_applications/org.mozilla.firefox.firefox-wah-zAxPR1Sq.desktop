@@ -1,0 +1,18 @@
+[Desktop Entry]
+Exec=firefox --class=wah-zAxPR1Sq --name=wah-zAxPR1Sq --profile=/home/estepleb/.var/app/org.pvermeer.WebAppHub/data/web-app-hub/profiles/firefox/zAxPR1Sq --no-remote https://desmos.com/calculator
+Icon=/home/estepleb/.var/app/org.pvermeer.WebAppHub/data/web-app-hub/icons/zAxPR1Sq.png
+Name=Desmos
+StartupWMClass=wah-zAxPR1Sq
+Terminal=false
+Type=Application
+Version=1.0
+X-MultipleArgs=false
+X-WAH=true
+X-WAH-BROWSER-ID=firefox
+X-WAH-ID=zAxPR1Sq
+X-WAH-ISOLATE=true
+X-WAH-MAXIMIZE=false
+X-WAH-PROFILE=/home/estepleb/.var/app/org.pvermeer.WebAppHub/data/web-app-hub/profiles/firefox/zAxPR1Sq
+X-WAH-URL=https://desmos.com/calculator
+X-WAH-VERSION=0.2.2
+

@@ -1,0 +1,9 @@
+{
+    "Alt-/": "lua:comment.comment",
+    "CtrlUnderscore": "lua:comment.comment",
+    "Ctrl-c": "Copy",
+    "Ctrl-v": "Paste",
+    "Ctrl-x": "Cut",
+    "Ctrl-y": "Redo",
+    "Ctrl-z": "Undo"
+}
