@@ -1,5 +1,11 @@
 {{- if ne .is_desktop true}}
 # Ignore GUI configs on when not on a desktop (ie on headless servers)
+
+Wallpapers
+
+.Xcompose
+.gtkrc-2.0
+
 .local
 
 .config/alacritty
