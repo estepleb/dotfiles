@@ -1,11 +1,12 @@
 {{- $isDesktop := or (env "DISPLAY") (env "WAYLAND_DISPLAY") -}}
-{{- $name := promptStringOnce . "name" "What is your full name?" -}}
-{{- $email := promptStringOnce . "email" "What is your email address?" -}}
+{{- $name := promptStringOnce . "name" "What is your full name" -}}
+{{- $email := promptStringOnce . "email" "What is your email address" -}}
 
 
 [data]
-    hostname = {{ .chezmoi.hostname | quote }}
-{{- if $isDesktop }}
+	hostname = {{ .chezmoi.hostname | quote }}
+    name = {{ $name | quote }}
+    email = {{ $email | quote }}{{- if $isDesktop }}
     is_desktop = true
     is_server = false
 {{- else }}
