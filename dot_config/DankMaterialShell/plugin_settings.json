@@ -1,0 +1,88 @@
+{
+  "dankPomodoroTimer": {
+    "enabled": true,
+    "autoStartBreaks": false,
+    "autoStartPomodoros": false,
+    "autoSetDND": true,
+    "completedPomodoros-2026-02-04": 3
+  },
+  "dankBatteryAlerts": {
+    "enabled": true,
+    "criticalMessage": "Battery at ${level}% - Connect charger immediately!"
+  },
+  "grimblast": {
+    "enabled": true
+  },
+  "wallpaperShufflerPlugin": {
+    "enabled": true,
+    "wallpaperPath": "~/dotfiles/Wallpapers"
+  },
+  "emojiLauncher": {
+    "enabled": true,
+    "trigger": ":",
+    "noTrigger": false
+  },
+  "webSearch": {
+    "enabled": true,
+    "searchEngines": [],
+    "defaultEngine": "duckduckgo",
+    "trigger": "@"
+  },
+  "displayMirror": {
+    "enabled": true
+  },
+  "displaySettings": {
+    "enabled": true
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "="
+  },
+  "dankActions": {
+    "enabled": true
+  },
+  "dankHooks": {
+    "enabled": true
+  },
+  "powerUsagePlugin": {
+    "enabled": true
+  },
+  "tailscale": {
+    "enabled": true
+  },
+  "dankLauncherKeys": {
+    "enabled": true,
+    "trigger": "\\",
+    "providers": [
+      "mangowc"
+    ]
+  },
+  "dockerManager": {
+    "enabled": true,
+    "terminalApp": "foot --hold",
+    "groupByCompose": false
+  },
+  "easyEffects": {
+    "enabled": false,
+    "currentOutputIndex": -1,
+    "currentInputIndex": -1
+  },
+  "dmsLenovoBatterySettings": {
+    "enabled": true
+  },
+  "wallpaperDiscovery": {
+    "enabled": true,
+    "lastWallpaperUsed": "pexels",
+    "downloadLocation": "~/dotfiles/Wallpapers"
+  },
+  "dankClight": {
+    "enabled": true
+  },
+  "dankKDEConnect": {
+    "enabled": true,
+    "selectedDeviceId": "19d218f2fc544f178df1f3c7102bad2e"
+  },
+  "niriWindows": {
+    "enabled": true
+  }
+}

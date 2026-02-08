@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Reload Hyprland
+hyprctl reload
+
+exit 0

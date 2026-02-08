@@ -1,0 +1,133 @@
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+# ┃          Windowrules Configuration        ┃
+# ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+source = ~/.config/hypr/config/defaults.conf
+source = ~/.config/hypr/active-colors.conf
+
+# Windows Rules https://wiki.hyprland.org/Configuring/Window-Rules/ #
+
+# Inhibit idle on fullscreen
+windowrule = idleinhibit fullscreen, fullscreenstate: * 2
+
+# Float Necessary Windows
+windowrule = float, class:^(.*org.pulseaudio.pavucontrol.*)
+windowrule = float, class:^()$,title:^(.*Picture in picture.*)$
+windowrule = float, title:^(.*Picture-in-Picture.*)$
+windowrule = float, class:^()$,title:^(.*Save File.*)$
+windowrule = float, class:^()$,title:^(.*Open File.*)$
+windowrule = float, class:^()$,title:^(.*Export.*)$
+windowrule = float, class:^(LibreWolf)$,title:^(.*Picture-in-Picture.*)$
+windowrule = float, class:^(xdg-desktop-portal-gtk|xdg-desktop-portal-kde|xdg-desktop-portal-hyprland)(.*)$
+windowrule = float, class:^(polkit-gnome-authentication-agent-1|hyprpolkitagent|org.org.kde.polkit-kde-authentication-agent-1)(.*)$
+windowrule = float, class:^(CachyOSHello)$
+windowrule = float, class:^(zenity)$
+windowrule = float, class:^()$,title:^(Steam - Self Updater)$
+windowrule = float, class:^(org.gnome.Loupe)$
+windowrule = center, class:^(org.gnome.Loupe)
+windowrule = float, class:^io.missioncenter.MissionCenter$
+windowrule = center, class:^io.missioncenter.MissionCenter$
+windowrule = size 50% 65%, class:^io.missioncenter.MissionCenter$
+windowrule = float, class:^Bitwarden$
+windowrule = center, class:^Bitwarden$
+windowrule = size 40% 65%, class:^Bitwarden$
+windowrule = float, class:^(localsend)$
+windowrule = size 25% 55%, class:^(localsend)$
+windowrule = center, class:^(localsend)$
+
+
+windowrule = float, class:^de.haeckerfelix.Shortwave$
+windowrule = move 51% 5%, class:^de.haeckerfelix.Shortwave$
+windowrule = size 750 550, class:^de.haeckerfelix.Shortwave$
+
+# Hyprprop
+windowrulev2 = float, title:^(hyprprop)$
+windowrulev2 = center, title:^(hyprprop)$
+windowrulev2 = size 800 600, title:^(hyprprop)$
+
+# Allow screen tearing
+windowrule = immediate, class:^(cs2)$
+windowrule = immediate, class:^(rivals)$
+
+# Increase the opacity
+windowrule = opacity 0.92, class:^(thunar|nemo)$
+windowrule = opacity 0.96, class:^(discord|armcord|webcord)$
+windowrule = opacity 0.8, class:^(Alacritty|foot)$
+windowrule = opacity 0.95, title:^(QQ|Telegram)$
+windowrule = opacity 0.95, title:^(NetEase Cloud Music Gtk4)$
+
+# Border Colors
+windowrule = bordercolor $busy_border, title:^(.*Copying files.*)$
+windowrule = bordercolor $busy_border, title:^(.*Confirm File Replacing.*)$
+windowrule = bordercolor $busy_border, title:^(.*pacman.*)$
+windowrule = bordercolor $busy_border, title:^(.*paru.*)$
+windowrule = bordercolor $busy_border, title:^(.*p - p.*)$
+windowrule = bordercolor $busy_border, title:^(.*yay.*)$
+
+# General window rules
+windowrule = size 960 540, title:^(.*Picture-in-Picture.*)$
+windowrule = move 25%-, title:^(.*Picture-in-Picture.*)$
+windowrule = float, title:^(imv|mpv|danmufloat|termfloat|nemo|ncmpcpp)$
+windowrule = move 25%-, title:^(imv|mpv|danmufloat|termfloat|nemo|ncmpcpp)$
+windowrule = size 50% 50%, title:^(imv|mpv|danmufloat|termfloat|nemo|ncmpcpp)$
+windowrule = animation popin, class:^(kitty|Alacritty|foot)$
+windowrule = animation slide down, workspace:^(special:terminal)
+windowrule = animation slide left, workspace:^(special:music)
+windowrule = noblur, class:^(org.mozilla.firefox)$
+
+# Floating windows on workspaces 1 to 10
+windowrule = bordercolor $floating_border, floating:1
+windowrule = rounding 10, floating:1
+
+# Pinned Borders
+windowrule = bordercolor $pinned_border, pinned:1
+
+# Xwayland Borders
+windowrule = bordercolor $xwayland_border, xwayland:1
+
+# Special Workspaces Borders
+windowrule = bordercolor $special_border1 $special_border2 180deg, onworkspace:s[1]
+
+# HyprMode - Float and center (for Alacritty/Kitty)
+windowrule = stayfocused, class:(hyprmode)
+windowrule = float, class:(hyprmode)
+windowrule = center, class:(hyprmode)
+windowrule = size 767 655, class:(hyprmode)
+windowrule = opacity 0.95, class:(hyprmode)
+
+# OSTT Speech to Text
+windowrule = stayfocused, title:ostt
+windowrule = float, title:ostt
+windowrule = size 14% 10%, title:ostt
+windowrule = move 85% 89%, title:ostt
+windowrule = bordercolor $busy_border, title:ostt
+
+
+# Windows Rules End #
+
+# Workspaces Rules https://wiki.hyprland.org/Configuring/Workspace-Rules/ #
+workspace = special:terminal, on-created-empty:[float] $terminal, persistent:false
+workspace = special:music, on-created-empty: [float]$spotify && $radio, persistent:false
+workspace = special:todo, on-created-empty: [float]$ticktick, persistent:false
+workspace = special:stash, persistent:true
+
+
+# Workspaces Rules End #
+
+# Layers Rules #
+#Rofi
+layerrule = blur, ^rofi$
+layerrule = blurpopups, ^rofi$
+layerrule = ignorealpha 0.5, ^rofi$
+
+
+# Walker
+layerrule = animation popin ^walker$
+layerrule = blur, ^walker$
+layerrule = blurpopups, ^walker$
+layerrule = ignorealpha 0.5, ^walker$
+layerrule = xray 0, ^walker$
+
+layerrule = animation fade, ^selection$
+
+# Layers Rules End #

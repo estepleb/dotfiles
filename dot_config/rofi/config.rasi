@@ -1,0 +1,24 @@
+configuration {
+  display-drun: "Apps:";
+  display-window: "Windows:";
+  display-calc: "Calc:";
+  combi-display-format: "{text}";
+  drun-display-format: "{icon} {name}";
+  modi: "window,run,drun,emoji,calc,filebrowser";
+  show-icons: true;
+  icon-theme: "Papirus";
+  matching: "fuzzy";
+  sort: true;
+  sorting-method: "fzf"; // or levenshtein
+  click-to-exit: true;
+  kb-cancel: "Escape";
+
+  window {
+		window-thumbnail: true;
+        close-on-delete: false;
+        window-format: "{c} {t[:10]}";
+        prefer-icon-theme: true;
+        }
+}
+
+@theme "~/.config/rofi/themes/matugen-colors.rasi"

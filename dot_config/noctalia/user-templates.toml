@@ -1,0 +1,69 @@
+# User-defined templates
+# Add your custom templates below
+# Example:
+# [templates.myapp]
+# input_path = "~/.config/noctalia/templates/myapp.css"
+# output_path = "~/.config/myapp/theme.css"
+# post_hook = "myapp --reload-theme"
+
+# Remove this section and add your own templates
+#[templates.placeholder]
+#input_path = "/etc/xdg/quickshell/noctalia-shell/Assets/noctaliaTemplates/noctalia.json"
+#output_path = "/home/estepleb/.cache/noctalia/placeholder.json"
+
+
+[config]
+reload_apps = true
+
+[templates.cava]
+input_path = "~/.config/noctalia/templates/cava-colors.ini"
+output_path = "~/.config/cava/colors.ini"
+
+[templates.btop]
+input_path = "~/.config/noctalia/templates/btop.theme"
+output_path = "~/.config/btop/themes/active.theme"
+
+[templates.alacritty]
+input_path = "~/.config/noctalia/templates/alacritty.toml"
+output_path = "~/.config/alacritty/colors.toml"
+
+[templates.kitty]
+input_path = "~/.config/noctalia/templates/kitty-colors.conf"
+output_path = "~/.config/kitty/colors.conf"
+
+[templates.starship]
+input_path = "~/.config/noctalia/templates/starship-colors.toml"
+output_path = "~/.config/starship/colors.toml"
+
+[templates.hyprland]
+input_path = "~/.config/noctalia/templates/hyprland-colors.conf"
+output_path = "~/.config/hypr/active-colors.conf"
+
+[templates.mango]
+input_path = "~/.config/noctalia/templates/mango-colors.conf"
+output_path = "~/.config/mango/colors.conf"
+
+[templates.walker]
+input_path = "~/.config/noctalia/templates/walker.css"
+output_path = "~/.config/walker/colors.css"
+
+[templates.yazi]
+input_path = "~/.config/noctalia/templates/yazi-theme.toml"
+output_path = "~/.config/yazi/colors.toml"
+
+[templates.gtk3]
+input_path = "~/.config/noctalia/templates/gtk-colors.css"
+output_path = "~/.config/gtk-3.0/colors.css"
+post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
+
+[templates.gtk4]
+input_path = "~/.config/noctalia/templates/gtk-colors.css"
+output_path = "~/.config/gtk-4.0/colors.css"
+
+[templates.pywalfox]
+input_path = "~/.config/noctalia/templates/pywalfox-colors.json"
+output_path = "~/.cache/wal/colors.json"
+
+[templates.micro]
+input_path = "~/.config/noctalia/templates/micro.micro"
+output_path = "~/.config/micro/colorschemes/matugen-colors.micro"

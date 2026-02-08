@@ -1,0 +1,15 @@
+/* ROUNDED THEME FOR ROFI */
+/* Author: Newman Sanchez (https://github.com/newmanls) */
+
+* {
+    bg0:    #212121F2; /* background */
+    bg1:    #2A2A2A; /* input bar background */
+    bg2:    #3D3D3D80; /* border  */
+    bg3:    #4CAF50F2; /* highlight */
+    fg0:    #E6E6E6; /* text color */
+    fg1:    #FFFFFF; /* not used */
+    fg2:    #969696; /* text */
+    fg3:    #3D3D3D; /* dim text */
+}
+
+@import "template/rounded-template.rasi"
