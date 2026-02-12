@@ -125,10 +125,13 @@ binds {
     Mod+E hotkey-overlay-title="Open File Manager" repeat=false { spawn "nautilus"; }
     Mod+Return hotkey-overlay-title="Open Terminal (foot)" { spawn "foot"; }
     Mod+Shift+B hotkey-overlay-title="Open Zen Browser" repeat=false { spawn "flatpak" "run" "flatpak" "run" "app.zen_browser.zen"; }
-    Super+Alt+P hotkey-overlay-title="Open Bitwarden" repeat=false { spawn "flatpak" "run" "com.bitwarden.desktop"; }
-    Super+Alt+T hotkey-overlay-title="Open TickTick" repeat=false { spawn "flatpak" "run" "com.ticktick.TickTick"; }
+    Mod+Alt+P hotkey-overlay-title="Open Bitwarden" repeat=false { spawn "flatpak" "run" "com.bitwarden.desktop"; }
+    Mod+Alt+T hotkey-overlay-title="Open TickTick" repeat=false { spawn "flatpak" "run" "com.ticktick.TickTick"; }
+    Mod+Alt+O hotkey-overlay-title="Open Obsidian" repeat=false { spawn "obsidian"; }
+    // Mod+Alt+L hotkey-overlay-title="Open Localsend" repeat=false { spawn "localsend"; }
     XF86AudioMute hotkey-overlay-title="Toggle Audio Volume Mute" repeat=false { spawn "sh" "-c" "~/.local/bin/toggle_mute_led.sh"; }
     Mod+Escape repeat=false { toggle-keyboard-shortcuts-inhibit; }
     Mod+Shift+Slash repeat=false { show-hotkey-overlay; }
     Mod+Tab repeat=false { toggle-overview; }
+    Mod+grave repeat=false { focus-window-previous; }
 }
