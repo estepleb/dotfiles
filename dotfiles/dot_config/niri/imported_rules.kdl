@@ -1,0 +1,245 @@
+// Niri Window Rules Configuration
+// Migrated from MangoWC/Hyprland - CachyOS Configuration
+// https://niri-wm.github.io/niri/Configuration%3A-Window-Rules.html
+
+// ============================================================================
+// Floating Windows
+// ============================================================================
+
+// Pavucontrol
+window-rule {
+    match app-id="org.pulseaudio.pavucontrol"
+    open-floating true
+    default-column-width { proportion 0.3; }
+}
+
+// Picture-in-Picture (browser)
+window-rule {
+    match title="Picture.in.picture"
+    open-floating true
+    default-column-width { proportion 0.5; }
+}
+window-rule {
+    match title="Picture-in-Picture"
+    open-floating true
+    default-column-width { proportion 0.5; }
+}
+
+// File dialogs
+window-rule {
+    match title="Save File"
+    open-floating true
+    default-column-width { proportion 0.4; }
+}
+window-rule {
+    match title="Open File"
+    open-floating true
+    default-column-width { proportion 0.4; }
+}
+window-rule {
+    match title="Export"
+    open-floating true
+    default-column-width { proportion 0.4; }
+}
+
+// Desktop portals
+window-rule {
+    match app-id="xdg-desktop-portal-gtk"
+    open-floating true
+    default-column-width { proportion 0.35; }
+}
+window-rule {
+    match app-id="xdg-desktop-portal-kde"
+    open-floating true
+    default-column-width { proportion 0.35; }
+}
+window-rule {
+    match app-id="xdg-desktop-portal-hyprland"
+    open-floating true
+    default-column-width { proportion 0.35; }
+}
+
+// Polkit agents
+window-rule {
+    match app-id="polkit-gnome-authentication-agent-1"
+    open-floating true
+    default-column-width { proportion 0.3; }
+}
+window-rule {
+    match app-id="hyprpolkitagent"
+    open-floating true
+    default-column-width { proportion 0.3; }
+}
+window-rule {
+    match app-id="org.kde.polkit-kde-authentication-agent-1"
+    open-floating true
+    default-column-width { proportion 0.3; }
+}
+
+// CachyOS Hello
+window-rule {
+    match app-id="CachyOSHello"
+    open-floating true
+    default-column-width { proportion 0.5; }
+}
+
+// Zenity dialogs
+window-rule {
+    match app-id="zenity"
+    open-floating true
+    default-column-width { proportion 0.3; }
+}
+
+// Bitwarden in Zen Browser
+window-rule {
+    match app-id="app.zen_browser.zen" 
+    match title=r#"^Extension.*Bitwarden Password Manager.*$"#
+    open-floating true
+    default-column-width { proportion 0.4; }
+}
+
+// Steam updater
+window-rule {
+    match title="Steam - Self Updater"
+    open-floating true
+    default-column-width { proportion 0.4; }
+}
+
+// Wev
+window-rule {
+    match app-id="wev"
+    open-floating true
+    default-column-width { proportion 0.25; }
+}
+
+
+
+// Gamescope - fullscreen
+window-rule {
+    match app-id="gamescope"
+    open-fullscreen true
+}
+
+// Foot terminal - opacity
+window-rule {
+    match app-id=r#"^.*footclient.*$"#
+    opacity 0.9
+}
+window-rule {
+    match app-id=r#"^.*foot.*$"#
+    opacity 0.9
+}
+window-rule {
+    match app-id="foot"
+    opacity 0.9
+}
+
+// Gnome Loupe (image viewer)
+window-rule {
+    match app-id="org.gnome.Loupe"
+    open-floating true
+    default-column-width { proportion 0.5; }
+}
+
+// Gnome Nautilus Previewer
+window-rule {
+    match app-id="org.gnome.NautilusPreviewer"
+    open-floating true
+    default-column-width { proportion 0.5; }
+}
+
+// Gnome Calculator
+window-rule {
+    match app-id="org.gnome.Calculator"
+    open-floating true
+    default-column-width { proportion 0.25; }
+}
+
+// Mission Center (50% width)
+window-rule {
+    match app-id="io.missioncenter.MissionCenter"
+    open-floating true
+    default-column-width { proportion 0.5; }
+}
+
+// Bitwarden (40% width)
+window-rule {
+    match app-id="Bitwarden"
+    open-floating true
+    default-column-width { proportion 0.4; }
+}
+
+// LocalSend (25% width)
+window-rule {
+    match app-id="localsend"
+    open-floating true
+    default-column-width { proportion 0.25; }
+}
+
+// Shortwave
+window-rule {
+    match app-id="de.haeckerfelix.Shortwave"
+    open-floating true
+    default-column-width { proportion 0.4; }
+}
+
+// Media players
+window-rule {
+    match title="imv"
+    open-floating true
+    default-column-width { proportion 0.5; }
+}
+window-rule {
+    match title="mpv"
+    open-floating true
+    default-column-width { proportion 0.6; }
+    opacity 1.0
+}
+window-rule {
+    match title="danmufloat"
+    open-floating true
+    default-column-width { proportion 0.4; }
+}
+window-rule {
+    match title="termfloat"
+    open-floating true
+    default-column-width { proportion 0.4; }
+}
+window-rule {
+    match title="ncmpcpp"
+    open-floating true
+    default-column-width { proportion 0.5; }
+}
+
+// MPV - full opacity
+window-rule {
+    match app-id=r#"^mpv$"#
+    opacity 1.0
+}
+
+// Full opacity overrides
+window-rule {
+    match app-id=r#"^foot.*$"#
+    opacity 1.0
+}
+window-rule {
+    match app-id=r#"^obsidian$"#
+    opacity 1.0
+}
+window-rule {
+    match app-id=r#"^Google-chrome$"#
+    opacity 1.0
+}
+window-rule {
+    match app-id=r#"^xdg-desktop-portal.*$"#
+    opacity 1.0
+}
+
+// OSTT Speech to Text
+window-rule {
+    match app-id="ostt"
+    open-floating true
+    default-column-width { proportion 0.15; }
+}
+
+

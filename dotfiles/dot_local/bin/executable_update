@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+echo "------------------------------- Updating system & AUR -------------------------------"
+paru
+
+echo "------------------------------- Updating Flatpak -------------------------------"
+flatpak update
+
+echo "------------------------------- Update hyprland plugins -------------------------------"
+hyprpm update

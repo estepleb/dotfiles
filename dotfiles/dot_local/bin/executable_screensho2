@@ -1,0 +1,153 @@
+#!/usr/bin/env bash
+MODE="${1:-copysave}"
+REGION="${2:-area}"
+DIR="$HOME/Pictures/Screenshots"
+FILE="$DIR/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png"
+THUMB="/tmp/screenshots/thumb_$(basename "$FILE")"
+TEMP_FILE=""
+COPY_THUMB=""
+THUMB_TO_USE=""
+mkdir -p "$DIR"
+mkdir -p "/tmp/screenshots"
+
+# Cleanup function to remove temporary files
+cleanup() {
+    [ -f "$THUMB" ] && rm -f "$THUMB"
+    [ -f "$TEMP_FILE" ] && rm -f "$TEMP_FILE"
+    [ -f "$COPY_THUMB" ] && rm -f "$COPY_THUMB"
+    [ -f "$THUMB_TO_USE" ] && [ "$THUMB_TO_USE" != "$TEMP_FILE" ] && rm -f "$THUMB_TO_USE"
+}
+trap cleanup EXIT
+
+# Check for required commands
+if ! command -v wayfreeze &> /dev/null; then
+    echo "Error: wayfreeze not found."
+    exit 1
+fi
+
+# Check for required commands
+if ! command -v satty &> /dev/null; then
+    echo "Error: satty not found."
+    exit 1
+fi
+
+# Check for required commands
+if ! command -v convert &> /dev/null; then
+    echo "Error: imagemagick not found."
+    exit 1
+fi
+
+# Validate mode
+case "$MODE" in
+    copy|save|copysave|edit)
+        # Valid modes, continue
+        ;;
+    *)
+        echo "Invalid mode: $MODE"
+        echo "Usage: $0 {copy|save|copysave|edit} {monitor|area}"
+        exit 1
+        ;;
+esac
+
+# Validate action
+case "$REGION" in
+    area)
+        SELECTION=$(slurp 2>/dev/null)
+        ;;
+    monitor)
+        SELECTION=$(slurp -o 2>/dev/null)
+        ;;
+    *)
+        echo "Invalid action: $REGION"
+        echo "Usage: $0 {copy|save|copysave|edit} {monitor|area}"
+        echo "Default: {copysave} {area}"
+        exit 1
+        ;;
+esac
+
+# Exit silently if selection was cancelled
+test -z "$SELECTION" && exit 0
+
+# Set up signal handler to exit silently on script termination
+trap 'exit 0' TERM INT
+
+case "$MODE" in
+    copy)
+        wayfreeze & PID=$!; sleep .19; 
+        if [ $? -eq 0 ]; then
+            # Create temporary file for thumbnail
+            TEMP_FILE="/tmp/screenshots/temp_$(date +%Y-%m-%d_%H-%M-%S).png"
+            COPY_THUMB="/tmp/screenshots/thumb_temp_$(date +%Y-%m-%d_%H-%M-%S).png"
+            grim -g "$SELECTION" - | tee "$TEMP_FILE" | wl-copy
+            
+            # Wait until file is written and has content
+            timeout=1
+            while [ $timeout -gt 0 ] && [ ! -s "$TEMP_FILE" ]; do
+                sleep 0.05
+                timeout=$((timeout - 1))
+            done
+            
+            # Create thumbnail from temporary file
+            if convert "$TEMP_FILE" -resize 256x256 "$COPY_THUMB" 2>/dev/null; then
+                THUMB_TO_USE="$COPY_THUMB"
+            else
+                THUMB_TO_USE="$TEMP_FILE"
+            fi
+            
+            # Send notification with thumbnail
+            notify-send -e -a "Screenshot" -i "$THUMB_TO_USE" \
+                "Copied to clipboard" \
+                "Not saved to files"
+                
+            # Clean up copy-specific thumbnail
+            [ -f "$COPY_THUMB" ] && rm -f "$COPY_THUMB"
+        fi
+        kill $PID
+        ;;
+    
+    edit)
+        wayfreeze & PID=$!; sleep .1; 
+        if [ $? -eq 0 ]; then
+            grim -g "$SELECTION" - | satty --filename - --output-filename "$FILE"
+            notify-send -e -a "Screenshot" "Screenshot opened in satty"
+        fi
+        kill $PID
+        ;;
+        
+     copysave|save)
+        wayfreeze & PID=$!; sleep .1; 
+        if [ $? -eq 0 ]; then
+            if [ "$MODE" = "copysave" ]; then
+                grim -g "$SELECTION" - | tee "$FILE" | wl-copy
+            else
+                grim -g "$SELECTION" "$FILE"
+            fi
+        fi
+        kill $PID
+        
+        # Only show notification with actions if file was saved
+        if [ -f "$FILE" ]; then
+            # Create a small thumbnail (max 256x256)
+            convert "$FILE" -resize 256x256 "$THUMB" 2>/dev/null || THUMB="$FILE"
+            
+            # Send notification with thumbnail and actions
+            ACTION=$(notify-send -e -a "Screenshot" -i "$THUMB" \
+                "Screenshot saved" \
+                "File: $(basename "$FILE")" \
+                -A "view=View" -A "edit=Edit" -A "directory=Save Dir")
+            
+            case "$ACTION" in
+                view) xdg-open "$FILE" ;;
+                edit) satty -f "$FILE" ;;
+                directory) xdg-open "$DIR" ;;
+            esac
+        fi
+        ;;
+    *)
+		echo "Usage: $0 {copy|save|copysave|edit} {monitor|area}"
+        echo "Default: {copysave} {area}"       
+         exit 1
+        ;;
+esac
+
+exit 0

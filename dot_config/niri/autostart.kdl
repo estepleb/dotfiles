@@ -1,9 +1,0 @@
-// ────────────── Startup Applications ──────────────
-// https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
-
-	// Persist clipboard after original program is closed
-	spawn-sh-at-startup "wl-clip-persist --clipboard regular"
-
-	// Sync clipboard between Wayland and Xwayland
-	spawn-sh-at-startup "clipboard-sync"
-	

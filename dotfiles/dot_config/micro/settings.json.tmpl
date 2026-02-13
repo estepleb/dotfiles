@@ -1,0 +1,9 @@
+ {
+     "clipboard": "terminal",
+     {{- if eq .is_desktop true}}
+    "colorscheme": "matugen"
+     {{- end }}
+     {{- if eq .is_server true}}
+     "colorscheme": "gruvbox"
+     {{- end }}
+ }

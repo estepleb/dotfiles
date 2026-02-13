@@ -1,0 +1,36 @@
+[Default Applications]
+application/pdf=org.gnome.Evince.desktop
+inode/directory=org.gnome.Nautilus.desktop
+image/png=org.gnome.Loupe.desktop
+image/webp=org.gnome.Loupe.desktop
+application/x-desktop=micro.desktop
+x-scheme-handler/discord-622143930900807680=discord-622143930900807680.desktop
+text/plain=org.gnome.gedit.desktop
+application/zip=org.gnome.FileRoller.desktop
+text/markdown=com.github.fabiocolacio.marker.desktop
+x-scheme-handler/discord=equibop.desktop
+application/json=org.gnome.gedit.desktop
+image/jpeg=org.gnome.Loupe.desktop
+image/heif=org.gnome.Loupe.desktop
+video/webm=mpv.desktop
+image/gif=org.gnome.Loupe.desktop
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=onlyoffice-desktopeditors.desktop
+application/x-shellscript=org.gnome.gedit.desktop
+application/x-zerosize=org.gnome.TextEditor.desktop
+
+[Added Associations]
+application/pdf=org.gnome.Evince.desktop;
+image/png=org.gnome.Loupe.desktop;
+image/webp=org.gnome.eog.desktop;
+application/x-desktop=micro.desktop;
+text/plain=org.gnome.gedit.desktop;
+application/zip=org.gnome.FileRoller.desktop;
+text/markdown=org.gnome.gedit.desktop;com.github.fabiocolacio.marker.desktop;
+application/json=org.gnome.gedit.desktop;
+image/jpeg=org.gnome.Loupe.desktop;
+image/heif=org.gnome.Loupe.desktop;
+video/webm=mpv.desktop;
+image/gif=org.gnome.Loupe.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=onlyoffice-desktopeditors.desktop;
+application/x-shellscript=org.gnome.gedit.desktop;
+application/x-zerosize=org.gnome.TextEditor.desktop;

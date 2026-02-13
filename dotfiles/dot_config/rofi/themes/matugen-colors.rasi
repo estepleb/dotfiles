@@ -1,0 +1,16 @@
+/* Matugen template based on: */
+/* ROUNDED THEME FOR ROFI */
+/* Author: Newman Sanchez (https://github.com/newmanls) */
+
+* {
+    bg0:    rgba(18, 20, 13, 1.0); /* background */
+    bg1:    #34362d; /* input bar background */
+    bg2:    #909284; /* border  */
+    bg3:    rgba(83, 101, 36, 1.0); /* highlight */
+    fg0:    rgba(227, 227, 215, 1.0); /* text color */
+    fg1:    #d6eb9c; /* on highlight text */
+    fg2:    #e3e3d7; /* prompt text */
+    fg3:    #c6c8b8; /* search text */
+}
+
+@import "template/rounded-template.rasi"

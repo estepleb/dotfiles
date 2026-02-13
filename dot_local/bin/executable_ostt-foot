@@ -1,4 +1,0 @@
-#! /usr/bin/env bash
-
-pkill ostt || foot --app-id=ostt ostt
-

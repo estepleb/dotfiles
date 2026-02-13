@@ -1,9 +1,0 @@
-#! /usr/bin/env fish
-
-echo "Updating fish completions"
-fish_update_completions
-
-echo "Updating tldr"
-tldr --update
-
-exit

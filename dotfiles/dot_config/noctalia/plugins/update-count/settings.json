@@ -1,0 +1,8 @@
+{
+  "updateIntervalMinutes": 30,
+  "updateTerminalCommand": "foot -e",
+  "currentIconName": "download",
+  "hideOnZero": false,
+  "customCmdGetNumUpdates": "paru -Quq 2>/dev/null | wc -l",
+  "customCmdDoSystemUpdate": "paru -Syu"
+}

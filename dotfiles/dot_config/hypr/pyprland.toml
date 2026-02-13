@@ -1,0 +1,18 @@
+[pyprland]
+plugins = [
+    "shift_monitors",
+    "workspaces_follow_focus",
+    "scratchpads",
+    "toggle_special"
+]
+
+
+
+[scratchpads.term]
+animation = "fromTop"
+command = "alacritty --class alacritty-dropterm"
+class = "alacritty-dropterm"
+size = "75% 60%"
+max_size = "1920px 100%"
+margin = 50
+
