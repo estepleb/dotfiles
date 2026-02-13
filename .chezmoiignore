@@ -1,36 +1,10 @@
 {{- if ne .is_desktop true}}
-# Ignore GUI configs on when not on a desktop (ie on headless servers)
+# Ignore everything except terminal configs on when not on a desktop (ie on headless servers)
 
-Wallpapers
 
-.Xcompose
-.gtkrc-2.0
-
-.local
-
-.config/alacritty
-.config/DankMaterialShell
-.config/fontconfig
-.config/foot
-.config/gtk-3.0
-.config/gtk-4.0
-.config/hypr
-.config/Kvantum
-.config/mango
-.config/matugen
-.config/niri
-.config/noctalia
-.config/ostt
-.config/paru
-.config/qt5ct
-.config/qt6ct
-.config/rofi
-.config/starship
-.config/wallust
-.config/xdg-desktop-portal
-.config/electron-flags.conf
-.config/mimeapps.list
-.config/starship.toml
-.config/xdg-terminals.list
+!.config/fish
+!.config/micro
+!.config/starship
+!.config/starship.toml
 
 {{- end }}
