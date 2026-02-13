@@ -7,22 +7,39 @@ abbr -a p paru
 abbr -a e exit 
 abbr -a cd z 
 abbr -a sl ls
-abbr -a cp cp -v
-abbr -a mv mv -v
-abbr -a mkdir mkdir -p 
-abbr -a tree lt
+abbr -a cp 'cp -v'
+abbr -a mv 'mv -v'
+abbr -a mkdir 'mkdir -p'
   
 
 # Git abbreviations
 abbr -a gco git checkout
 abbr -a gad git add
 abbr -a gst git status
+abbr -a gcm 'git commit -m'
+
+
+# Docker Compose
+abbr -a dc 'docker compose'
+abbr -a dcu 'docker compose up'
+abbr -a dcd 'docker compose down'
+abbr -a dcr 'docker compose restart'
+abbr -a dcls 'docker compose ls'
+abbr -a dcps 'docker compose ps'
+
+
+# Chezmoi
+abbr -a chz 'chezmoi'
+abbr -a cm 'chezmoi'
+abbr -a chm 'chezmoi'
+
+
+
 
 # General commands
 abbr -a la 'ls -la'
 abbr -a ll 'ls -l'
 abbr -a nv nvim
-abbr -a ghb 'gh browse' # Example using gh CLI
 
 
 # My own aliases
@@ -39,7 +56,6 @@ alias ls='eza -al --color=always --group-directories-first --icons' # preferred 
 alias la='eza -a --color=always --group-directories-first --icons'  # all files and dirs
 alias ll='eza -l --color=always --group-directories-first --icons'  # long format
 alias lt='eza -aT --color=always --group-directories-first --icons' # tree listing
-alias tree='eza -aT --color=always --group-directories-first --icons' # tree listing
 alias l.="eza -a | grep -e '^\.'"  
 
 # cat with bat 
